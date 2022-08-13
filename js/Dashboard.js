@@ -24,22 +24,33 @@ let check = function() {
 
         db.collection("aerators").doc(firebase.auth().currentUser.uid).get().then((doc) => {
           if (doc.exists) {
-
+            
             var KitchenAerators = doc.data()["Kitchen"]["Number"]
             var BathroomAerators = doc.data()["Bathroom"]["Number"]
             var BathroomDate = doc.data()["Bathroom"]["Date"]
             var KitchenDate = doc.data()["Kitchen"]["Date"]
             
             let TodayDate = new Date();
-            let JSBathroomDate = new Date(BathroomDate);
-            let Bathroomdifference = TodayDate - JSBathroomDate
-            let BathroomTotalDays = Math.ceil(Bathroomdifference / (1000 * 3600 * 24)) - 1
-            
-            let JSKitchenDate = new Date(KitchenDate);
+            let BathroomTotalDays
+            let KitchenTotalDays
+
+            if (BathroomDate != ""){
+              let JSBathroomDate = new Date(BathroomDate);
+              let Bathroomdifference = TodayDate - JSBathroomDate
+              BathroomTotalDays = Math.ceil(Bathroomdifference / (1000 * 3600 * 24)) - 1  
+            } else {
+              BathroomTotalDays = 0
+            }
+            if (KitchenDate != ""){
+              let JSKitchenDate = new Date(KitchenDate);
             let Kitchendifference = TodayDate - JSKitchenDate
-            let KitchenTotalDays = Math.ceil(Kitchendifference / (1000 * 3600 * 24)) - 1
-            var WaterSaved = BathroomTotalDays * Number(BathroomAerators) * WaterCalculation["Bathroom"] + KitchenTotalDays * Number(KitchenAerators) * WaterCalculation["Kitchen"]
-        
+            KitchenTotalDays = Math.ceil(Kitchendifference / (1000 * 3600 * 24)) - 1
+            
+            } else {
+              KitchenTotalDays = 0
+            }
+            var WaterSaved = BathroomTotalDays * Number(BathBathroomTotalDaysroomAerators) * WaterCalculation["Bathroom"] + KitchenTotalDays * Number(KitchenAerators) * WaterCalculation["Kitchen"]
+            
               document.getElementById("WaterSaved").innerHTML = WaterSaved + "Ltrs";
               document.getElementById("Aerators").innerHTML = doc.data()["Aerators"] + " AERATORS INSTALLED";
               document.getElementById("number-kitchen").value = doc.data()["Kitchen"]["Number"];
