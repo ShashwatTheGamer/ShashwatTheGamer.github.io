@@ -9,7 +9,6 @@ function closeNav() {
 
 var retry = 0
 
-var WaterSaved = 0
 var Aerators = 0
 var KitchenAerators = 0
 var BathroomAerators = 0
@@ -72,7 +71,6 @@ let check = function() {
           if (doc.exists) {
             console.log("Document data:", doc.data());
 
-            WaterSaved = doc.data()["WaterSaved"];
             Aerators = doc.data()["Aerators"];
             KitchenAerators = doc.data()["Kitchen"]["Number"];
             BathroomAerators = doc.data()["Bathroom"]["Number"];
@@ -145,7 +143,6 @@ var UpdateUserProfile = function(first, last, email, phone, city, pincode, schoo
 
 
    db.collection("aerators").doc(firebase.auth().currentUser.uid).set({
-    WaterSaved: WaterSaved,
     Aerators: Aerators,
     Kitchen: {
      Number: KitchenAerators,

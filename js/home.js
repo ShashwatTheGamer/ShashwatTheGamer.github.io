@@ -14,11 +14,28 @@ function nFormatter(num) {
 var WaterSaved = 0;
 var Aerators = 0;
 var Houses = 0;
-db.collection("aerators").where("WaterSaved", "!=", null)
+db.collection("aerators").where("Aerators", "!=", 0)
     .get()
     .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            WaterSaved += doc.data()["WaterSaved"]
+            
+            var KitchenAerators = doc.data()["Kitchen"]["Number"]
+            var BathroomAerators = doc.data()["Bathroom"]["Number"]
+            var BathroomDate = doc.data()["Bathroom"]["Date"]
+            var KitchenDate = doc.data()["Kitchen"]["Date"]
+
+            let TodayDate = new Date();
+            let JSBathroomDate = new Date(BathroomDate);
+            let Bathroomdifference = TodayDate - JSBathroomDate
+            let BathroomTotalDays = Math.ceil(Bathroomdifference / (1000 * 3600 * 24)) - 1
+            
+            let JSKitchenDate = new Date(KitchenDate);
+            let Kitchendifference = TodayDate - JSKitchenDate
+            let KitchenTotalDays = Math.ceil(Kitchendifference / (1000 * 3600 * 24)) - 1
+            var DocWaterSaved = BathroomTotalDays * Number(BathroomAerators) * WaterCalculation["Bathroom"] + KitchenTotalDays * Number(KitchenAerators) * WaterCalculation["Kitchen"]
+        
+
+            WaterSaved += DocWaterSaved
             Aerators += doc.data()["Aerators"]
             Houses += 1
         });
