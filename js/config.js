@@ -33,6 +33,6 @@ var CLIENT_ID =
 const db = firebase.firestore();
 
 const WaterCalculation = {
-  Kitchen: 81,
-  Bathroom: 42
+  Kitchen: 60,
+  Bathroom: 20
 } //Litre per day
