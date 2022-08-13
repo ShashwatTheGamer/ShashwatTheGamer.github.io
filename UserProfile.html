@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en-IN"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="manifest" href="manifest.json">
+    <meta name="keywords" content="save water, Water Saviors, water crisis">
+    <meta name="description" content="My small effort towards saving the most precious resource, water!">
+    <title>UserProfile</title>
+    <link rel="stylesheet" href="css/nicepage.css" media="screen">
+<link rel="stylesheet" href="css/UserProfile.css" media="screen">
+    <script class="u-script" type="text/javascript" src="js/jquery.js" "="" defer=""></script>
+    <script class="u-script" type="text/javascript" src="js/nicepage.js" "="" defer=""></script>
+    <meta name="generator" content="4.16.0, ">
+    <link rel="icon" href="../images/favicon.png">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/common.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "WaterSaviors",
+		"logo": "../images/logolong.png"
+}</script>
+    <meta name="theme-color" content="#26a6fe">
+    <meta property="og:title" content="UserProfile">
+    <meta property="og:description" content="My small effort towards saving the most precious resource, water!">
+    <meta property="og:type" content="website">
+
+    <script src="js/userprofile.js" defer></script>
+
+  </head>
+  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-862d"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="Dashboard" data-page-id="110982866" class="u-image u-logo u-image-1" data-image-width="1580" data-image-height="254" title="Home">
+          <img src="../images/logolong.png" class="u-logo-image u-logo-image-1">
+        </a>
+        <div id="login" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-1">LOGIN</div>
+      </div></header>
+    <section class="u-align-center u-clearfix u-section-1" id="carousel_d187">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-align-center u-container-style u-grey-5 u-layout-cell u-size-22 u-layout-cell-1">
+                <div class="u-container-layout u-container-layout-1">
+                  <h3 class="u-text u-text-default u-text-1">Update your Profile</h3>
+                  <div class="u-image u-image-circle u-image-1" alt="" id="photo" data-image-width="1280" data-image-height="853"></div>
+                </div>
+              </div>
+              <div class="u-align-left u-bottom-right-radius-50 u-container-style u-layout-cell u-palette-3-base u-shape-round u-size-38 u-top-right-radius-50 u-layout-cell-2">
+                <div class="u-container-layout u-valign-middle u-container-layout-2">
+                  <div class="u-form u-form-1">
+                    <form id="ProfileForm" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form-1" style="padding: 10px;">
+                      <div class="u-form-group u-form-name u-form-partition-factor-2">
+                        <label for="first" class="u-label">First Name</label>
+                        <input type="text" placeholder="Enter your First Name" id="first" name="first" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                      </div>
+                      <div class="u-form-group u-form-name u-form-partition-factor-2 u-form-group-2">
+                        <label for="last" class="u-label">Last Name</label>
+                        <input type="text" placeholder="Enter your Last Name" id="last" name="last" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                      </div>
+                      <div class="u-form-email u-form-group">
+                        <label for="email" class="u-label">Email</label>
+                        <input type="email" placeholder="Enter a valid email address" id="email" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                      </div>
+                      <div class="u-form-group u-form-phone u-form-group-4">
+                        <label for="phone" class="u-label">Phone</label>
+                        <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Enter your phone (e.g. +14155552675)" id="phone" name="phone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                      </div>
+                      <div class="u-form-address u-form-group u-form-partition-factor-2 u-form-group-5">
+                        <label for="city" class="u-label">City</label>
+                        <input type="text" placeholder="Enter your city" id="city" name="city" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                      </div>
+                      <div class="u-form-group u-form-partition-factor-2 u-form-group-6">
+                        <label for="pincode" class="u-label">Pincode</label>
+                        <input type="text" placeholder="Enter your 6 digit city pincode" id="pincode" name="pincode" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+                      </div>
+                      <div class="u-form-group u-form-partition-factor-2 u-form-group-7">
+                        <label for="school" class="u-label">School</label>
+                        <input type="text" placeholder="Enter your school name" id="school" name="school" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                      </div>
+                      <div class="u-form-group u-form-partition-factor-2 u-form-select u-form-group-8">
+                        <label for="grade" class="u-label">Grade</label>
+                        <div class="u-form-select-wrapper">
+                          <select id="grade" name="grade" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+                            <option value="Grade 1">Grade 1</option>
+                            <option value="Grade 2">Grade 2</option>
+                            <option value="Grade 3">Grade 3</option>
+                            <option value="Grade 4">Grade 4</option>
+                            <option value="Grade 5">Grade 5</option>
+                            <option value="Grade 6">Grade 6</option>
+                            <option value="Grade 7">Grade 7</option>
+                            <option value="Grade 8">Grade 8</option>
+                            <option value="Grade 9">Grade 9</option>
+                            <option value="Grade 10">Grade 10</option>
+                            <option value="Grade 11">Grade 11</option>
+                            <option value="Grade 12">Grade 12</option>
+                          </select>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                        </div>
+                      </div>
+                      <div class="u-align-left u-form-group u-form-submit">
+                        <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
+                        <input type="submit" value="submit" class="u-form-control-hidden">
+                      </div>
+                      <div class="u-form-send-message u-form-send-success"> User Profile Updated </div>
+                      <div class="u-form-send-error u-form-send-success"> User Profile Updated</div>
+                      <input type="hidden" value="" name="recaptchaResponse">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <div id="myNav" class="overlay">
+      <div class="overlay-content">
+        <a href="#">Loading...</a>
+      </div>
+    </div>
+
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-a077"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Water Saviors&nbsp;• Shashwat Agrawal&nbsp;• 2022</p>
+        <script type="text/javascript">
+          function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+          }
+          </script>
+          
+          <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+              <div id="google_translate_element"></div></div></footer>
+      
+</body></html>

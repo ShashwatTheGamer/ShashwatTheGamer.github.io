@@ -1,5 +1,5 @@
  .u-section-1 {
-  background-image: url("images/dd3-min.png");
+  background-image: url("../images/dd3-min.png");
   background-position: 50% 0%;
 }
 
@@ -430,7 +430,7 @@
     width: 293px;
   }
 } .u-section-3 {
-  background-image: url("images/mmm.jpg");
+  background-image: url("../images/mmm.jpg");
   background-position: 50% 50%;
 }
 
@@ -1057,6 +1057,7 @@
     width: auto;
     margin-top: 48px;
     margin-left: calc(((100% - 940px) / 2) + 36px);
+    font-size: 3rem;
   }
 
   .u-section-4 .u-tabs-1 {
@@ -1186,7 +1187,6 @@
     margin-top: 47px;
     margin-left: 46px;
     margin-right: 46px;
-    font-size: 3rem;
   }
 
   .u-section-4 .u-tabs-1 {

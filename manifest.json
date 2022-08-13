@@ -1,0 +1,13 @@
+{
+  "name": "Water Saviors",
+  "short_name": "WaterSaviors",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "lang": "en-IN",
+  "description": "Water Saviors",
+  "prefer_related_applications": false,
+  "theme_color": "#fff",
+  "scope": "/",
+  "orientation": "portrait-primary"
+}

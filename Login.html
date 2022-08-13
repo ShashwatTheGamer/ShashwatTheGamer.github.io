@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en-IN"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="save water, Water Saviors, water crisis">
+    <meta name="description" content="My small effort towards saving the most precious resource, water!">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/nicepage.css" media="screen">
+<link rel="stylesheet" href="css/Login.css" media="screen">
+    <script class="u-script" type="text/javascript" src="js/jquery.js" "="" defer=""></script>
+    <script class="u-script" type="text/javascript" src="js/nicepage.js" "="" defer=""></script>
+    <meta name="generator" content="4.16.0, ">
+    <link rel="icon" href="../images/favicon.png">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "WaterSaviors",
+		"logo": "../images/logolong.png"
+}</script>
+<script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-auth-compat.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/common.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        // Url to redirect to after a successful sign-in.
+        'signInSuccessUrl': '/Dashboard',
+        'callbacks': {
+          'signInSuccess': function(user, credential, redirectUrl) {
+            if (window.opener) {
+              // The widget has been opened in a popup, so close the window
+              // and return false to not redirect the opener.
+              window.close();
+              return false;
+            } else {
+              // The widget has been used in redirect mode, so we redirect to the signInSuccessUrl.
+              return true;
+            }
+          }
+        },
+        'signInOptions': [
+          // TODO(developer): Remove the providers you don't need for your app.
+          {
+            provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            // Required to enable ID token credentials for this provider.
+            clientId: CLIENT_ID
+          },
+          
+          {
+            provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+            signInMethod: getEmailSignInMethod(),
+            disableSignUp: {
+              status: getDisableSignUpStatus()
+            }
+          },
+          {
+            provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+            defaultCountry: 'IN',
+            recaptchaParameters: {
+              size: getRecaptchaMode()
+            }
+          },
+          //firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
+        ],
+        // Terms of service url.
+        'tosUrl': 'https://www.google.com',
+        'credentialHelper': CLIENT_ID && CLIENT_ID != '454377391909-v81i98dfkae18ltq7h7eussvcmi98su0.apps.googleusercontent.com' ?
+            firebaseui.auth.CredentialHelper.GOOGLE_YOLO :
+            firebaseui.auth.CredentialHelper.NONE,
+        'adminRestrictedOperation': {
+          status: getAdminRestrictedOperationStatus()
+        }
+      };
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded to include the FirebaseUI sign-in widget
+      // within the element corresponding to the selector specified.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+
+    <script src="js/Login.js" defer></script>
+
+    <meta name="theme-color" content="#26a6fe">
+    <meta property="og:title" content="Login">
+    <meta property="og:description" content="My small effort towards saving the most precious resource, water!">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-862d"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="Water-Saviors" data-page-id="110982866" class="u-image u-logo u-image-1" data-image-width="1580" data-image-height="254" title="Home">
+          <img src="../images/logolong.png" class="u-logo-image u-logo-image-1">
+        </a>
+        <a href="#" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-1">LOGIN</a>
+      </div></header>
+    <section class="u-clearfix u-section-1" id="sec-087e">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-text u-text-default u-text-1">Login or Signup</h2>
+        <div class="u-clearfix u-custom-html u-custom-html-1">
+          <style></style>
+          <div id="firebaseui-auth-container"></div>
+        </div>
+      </div>
+    </section>
+    
+    <div id="myNav" class="overlay">
+      <div class="overlay-content">
+        <a href="#">Loading...</a>
+      </div>
+    </div>
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-a077"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Water Saviors&nbsp;• Shashwat Agrawal&nbsp;• 2022</p>
+        <script type="text/javascript">
+          function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+          }
+          </script>
+          
+          <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+              <div id="google_translate_element"></div></div></footer>
+  
+</body></html>
